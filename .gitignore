@@ -1,0 +1,12 @@
+# Personliga Obsidian-filer
+.obsidian/workspace*.json
+.obsidian/plugins/
+.obsidian/themes/
+.obsidian/snippets/
+.obsidian/cache
+.obsidian/graph.json
+.obsidian/appearance.json
+.obsidian/hotkeys.json
+.obsidian/core-plugins*.json
+.obsidian/community-plugins.json
+.trash/
