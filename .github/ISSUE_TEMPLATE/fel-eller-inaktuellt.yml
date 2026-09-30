@@ -1,0 +1,25 @@
+name: "🛠️ Något är fel eller inaktuellt"
+description: Rapportera fel, trasiga länkar eller innehåll som är inaktuellt.
+title: "[Rättelse]: "
+labels: ["rattelse"]
+body:
+  - type: input
+    id: sida
+    attributes:
+      label: Vilken sida?
+      description: Klistra in länken till sidan.
+    validations:
+      required: true
+  - type: textarea
+    id: fel
+    attributes:
+      label: Vad är fel?
+    validations:
+      required: true
+  - type: textarea
+    id: forslag
+    attributes:
+      label: Förslag på rättelse
+      description: Valfritt.
+    validations:
+      required: false

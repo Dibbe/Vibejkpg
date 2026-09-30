@@ -1,0 +1,9 @@
+# Obsidian: bara de delade inställningarna checkas in, allt annat är personligt
+.obsidian/*
+!.obsidian/app.json
+!.obsidian/templates.json
+.trash/
+
+# Systemfiler
+.DS_Store
+Thumbs.db
