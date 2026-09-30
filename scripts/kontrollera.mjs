@@ -24,6 +24,19 @@ export function hittaLankar(text) {
   return [...rensaKod(text).matchAll(re)].map((m) => m[1]);
 }
 
+// existsSync ignorerar skiftläge på Windows och macOS, men GitHub gör det inte.
+function finnsExakt(rot, mal) {
+  if (!existsSync(mal)) return false;
+  const rel = relative(rot, mal);
+  if (rel.startsWith('..')) return true;
+  let mapp = rot;
+  for (const del of rel.split(sep).filter(Boolean)) {
+    if (!readdirSync(mapp).includes(del)) return false;
+    mapp = join(mapp, del);
+  }
+  return true;
+}
+
 function arExtern(lank) {
   return /^[a-z][a-z0-9+.-]*:/i.test(lank) || lank.startsWith('#');
 }
@@ -40,7 +53,7 @@ export function kontrolleraFil(absVag, text, rot) {
       continue;
     }
     const mal = vag.startsWith('/') ? join(rot, vag) : resolve(dirname(absVag), vag);
-    if (!existsSync(mal)) fel.push(`Trasig länk: ${lank}`);
+    if (!finnsExakt(rot, mal)) fel.push(`Trasig länk: ${lank}`);
   }
   const ren = rensaKod(text);
   if (/\[\[[^\]]+\]\]/.test(ren)) fel.push('Wikilink hittad – använd en vanlig Markdown-länk');

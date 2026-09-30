@@ -46,6 +46,13 @@ test('trasig länk rapporteras', () => {
   assert.deepEqual(kontrolleraFil(join(rot, 'README.md'), '[X](saknas.md)', rot), ['Trasig länk: saknas.md']);
 });
 
+test('länk med fel skiftläge rapporteras även på skiftlägesokänsliga filsystem', () => {
+  const rot = skapaRot();
+  const fil = join(rot, 'README.md');
+  assert.deepEqual(kontrolleraFil(fil, '[C](02-Verktyg/cursor.md)', rot), ['Trasig länk: 02-Verktyg/cursor.md']);
+  assert.deepEqual(kontrolleraFil(fil, '[C](02-verktyg/Cursor.md)', rot), ['Trasig länk: 02-verktyg/Cursor.md']);
+});
+
 test('externa länkar och ankare kontrolleras inte', () => {
   const rot = skapaRot();
   const text = '[a](https://example.com) [b](mailto:a@b.se) [c](#rubrik)';

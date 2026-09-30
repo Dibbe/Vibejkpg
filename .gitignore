@@ -1,12 +1,9 @@
-# Personliga Obsidian-filer
-.obsidian/workspace*.json
-.obsidian/plugins/
-.obsidian/themes/
-.obsidian/snippets/
-.obsidian/cache
-.obsidian/graph.json
-.obsidian/appearance.json
-.obsidian/hotkeys.json
-.obsidian/core-plugins*.json
-.obsidian/community-plugins.json
+# Obsidian: bara de delade inställningarna checkas in, allt annat är personligt
+.obsidian/*
+!.obsidian/app.json
+!.obsidian/templates.json
 .trash/
+
+# Systemfiler
+.DS_Store
+Thumbs.db
