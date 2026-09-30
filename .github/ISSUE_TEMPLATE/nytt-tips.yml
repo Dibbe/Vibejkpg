@@ -1,0 +1,61 @@
+name: "💡 Nytt tips"
+description: Dela ett tips om vibe coding. Du behöver inte kunna Git.
+title: "[Tips]: "
+labels: ["tips"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Tack för att du delar med dig! Fyll i fälten nedan. En moderator gör om tipset till en sida i playbooken och nämner dig som författare.
+  - type: input
+    id: rubrik
+    attributes:
+      label: Rubrik
+      description: En kort rubrik som sammanfattar tipset.
+      placeholder: Be AI:n om en plan innan den skriver kod
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Vilket problem löser det?
+      description: Vilken situation eller vilket misstag hjälper tipset mot?
+    validations:
+      required: true
+  - type: textarea
+    id: tipset
+    attributes:
+      label: Tipset
+    validations:
+      required: true
+  - type: textarea
+    id: exempel
+    attributes:
+      label: Exempel eller prompt
+      description: Valfritt. Visa gärna en prompt du använt.
+    validations:
+      required: false
+  - type: dropdown
+    id: niva
+    attributes:
+      label: Nivå
+      options:
+        - Nybörjare
+        - Van
+        - Alla
+    validations:
+      required: true
+  - type: dropdown
+    id: verktyg
+    attributes:
+      label: Verktyg
+      options:
+        - Verktygsoberoende
+        - Claude Code
+        - Cursor
+        - Lovable
+        - Bolt
+        - v0
+        - Annat
+    validations:
+      required: true

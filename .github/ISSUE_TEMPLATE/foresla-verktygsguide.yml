@@ -1,0 +1,32 @@
+name: "🧰 Föreslå en verktygsguide"
+description: Tipsa om ett verktyg som borde ha en guide i playbooken.
+title: "[Verktygsguide]: "
+labels: ["verktygsguide"]
+body:
+  - type: input
+    id: verktyg
+    attributes:
+      label: Verktyg
+      placeholder: Till exempel Replit
+    validations:
+      required: true
+  - type: input
+    id: webbplats
+    attributes:
+      label: Webbplats
+      placeholder: https://
+    validations:
+      required: true
+  - type: textarea
+    id: varfor
+    attributes:
+      label: Varför behövs en guide?
+      description: Vem passar verktyget för, och vad gör det bättre eller annorlunda?
+    validations:
+      required: true
+  - type: checkboxes
+    id: skriva
+    attributes:
+      label: Vill du skriva guiden själv?
+      options:
+        - label: Ja, jag kan skriva den (vi hjälper dig med mallen)
